@@ -1,0 +1,78 @@
+Grok!!! let us go acadamic issue!!! as you can observe from usecase diagram the another actor is academics.in this actor there is department head,
+college dean,registrar office(Students Information Management Associate(sims),Costsharing and customer service team),Libraries Service Directorate 
+and academic vice president(all above called to  this) as sub actors(folders).in debre markose  university,the college  are college of business and economics:under this college there are three departement 
+those are accounting and finance,economics and mangement.college of technology under this only one computer science departement.college of agriculture and natural science under this college there are five 
+departement those are agri-business,agro-forestry,animal science,plant science ,natural resource mangement(NARM) and college of social sciences and humanities under this is only one peace and development departement.
+technically admin is add user for them.revise admin/add_user.php. each folders use usecases as file.I am attach screenshot from usecase diagram.thnks for you help grok!!!
+
+
+
+
+
+
+
+this is sample to make attractive for following  code
+
+
+
+dmu_complaints/
+├── assets/
+│   ├── logo.png
+├── handler/
+│   ├── dashboard.php
+│   ├── categorize.php
+│   ├── validate.php
+│   ├── escalate.php
+│   ├── view_resolved.php
+│   ├── view_escalated.php
+│   ├── manage_notices.php
+│   ├── view_notifications.php
+│   ├── view_feedback.php
+│   ├── view_complaint.php
+├── department_head/
+│   ├── index.php  (Placeholder for Department Head dashboard)
+│   ├── view_escalated.php  (To view escalated complaints)
+├── college_dean/
+│   ├── index.php  (Placeholder for College Dean dashboard)
+│   ├── view_escalated.php  (To view escalated complaints)
+├── registrar_office/
+│   ├── sims/
+│   │   ├── index.php  (Placeholder for SIMS dashboard)
+│   │   ├── view_escalated.php  (To view escalated complaints)
+│   ├── cost_sharing/
+│   │   ├── index.php  (Placeholder for Cost Sharing dashboard)
+│   │   ├── view_escalated.php  (To view escalated complaints)
+│   ├── customer_service/
+│   │   ├── index.php  (Placeholder for Customer Service dashboard)
+│   │   ├── view_escalated.php  (To view escalated complaints)
+├── libraries_service_directorate/
+│   ├── index.php  (Placeholder for Libraries Service Directorate dashboard)
+│   ├── view_escalated.php  (To view escalated complaints)
+├── academic_vice_president/
+│   ├── index.php  (Placeholder for Academic Vice President dashboard)
+│   ├── view_escalated.php  (To view escalated complaints)
+├── user/
+│   ├── dashboard.php  (User dashboard to submit complaints)
+│   ├── submit_complaint.php
+│   ├── view_complaints.php
+│   ├── view_notifications.php
+├── admin/
+│   ├── dashboard.php  (Admin dashboard)
+│   ├── manage_users.php
+│   ├── view_complaints.php
+├── db_connect.php
+├── login.php
+├── logout.php
+├── index.php
+├── styles.css
+
+
+
+
+
+
+President: The highest authority in the system who can receive escalations directly from the handler and make final decisions on complaints. the escalation from president come from academic vice president or administrative vice president not from handler. the handler can assign the complain to president when the issue directly want the president. I am attach my project directories
+
+
+
+the handler is coordinate the user and responsible body so, the handler assigns the complaint as want to responsible body. when the complaint is want responsibility of department head the handler assign to department head and the département head resolve it, send decision to handler. when the complaint cannot resolve by department head the department head escalate to college dean. when college dean resolves it , send decision to handler. When the complaint cannot resolve by college dean the college dean escalate to academic vice president. when academic vice president resolves it , send decision to handler. When the complaint cannot resolve by academic vice president the academic vice president escalate to president. when the complaint directly wants responsibility of college dean it will be   assign to college dean by handler when the college dean resolve send decision to handler   . When the complaint cannot resolve by college dean the college dean will escalate to academic vice president. The same flow to others

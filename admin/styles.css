@@ -1,0 +1,1075 @@
+/* --- Consolidated Stylesheet --- */
+
+/* Base Variables (Prioritizing File 1/3/4/5/6 consistency) */
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a0ca3;
+    --primary-light: #4895ef; /* Added from file 2 */
+    --secondary: #3f37c9; /* Consistent secondary */
+    --secondary-alt: #7209b7; /* Alt secondary from file 2 if needed elsewhere */
+    --accent: #4cc9f0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --radius: 12px; /* Consistent radius */
+    --radius-lg: 15px; /* Added from file 2 */
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* Consistent shadow */
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12); /* Added from file 2 */
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05); /* Softer shadow for cards/tables */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Consistent transition */
+}
+
+/* Global Reset & Base Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Montserrat', sans-serif; /* Added Montserrat */
+}
+
+/* Body Layout (Primary: Vertical Nav + Main Content) */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    color: var(--dark);
+    line-height: 1.6;
+    display: flex; /* Main layout */
+}
+
+/* Vertical Navigation (Used in Files 1, 3, 4, 5, 6) */
+.vertical-nav {
+    width: 280px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 20px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    flex-shrink: 0;
+    z-index: 100; /* Ensure it's above main content */
+}
+
+.nav-header {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.nav-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.nav-header img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav-header .logo-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.user-profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-profile-mini i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.user-info h4 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.user-info p {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.nav-menu {
+    padding: 0 10px;
+}
+
+.nav-menu h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 10px 10px;
+    opacity: 0.7;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    margin-bottom: 5px;
+    transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.nav-link i {
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.nav-link span {
+    flex-grow: 1;
+}
+
+/* Main Content Area (Used in Files 1, 3, 4, 5, 6) */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow content scroll */
+    position: relative; /* Needed for FAB positioning */
+}
+
+/* Horizontal Navigation (Used in Files 1, 3, 4, 5, 6) */
+.horizontal-nav {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.horizontal-nav .logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+}
+
+.horizontal-menu {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.horizontal-menu a {
+    color: var(--dark);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.horizontal-menu a:hover {
+    background: var(--light-gray);
+    color: var(--primary);
+}
+
+.horizontal-menu a.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Primary Page Container (Used in Files 1, 3, 4, 5, 6) */
+.container {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 30px 40px;
+    animation: fadeIn 0.6s ease-out;
+    flex-grow: 1; /* Allow container to fill space */
+    margin-bottom: 20px; /* Space before footer */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 25px;
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+}
+
+h3 { /* Used for section titles within container/card */
+    margin-bottom: 20px;
+    color: var(--dark);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1.2rem; /* Consistent margin */
+    color: var(--gray);
+    line-height: 1.7; /* Slightly increased line-height */
+}
+
+/* Alerts (Combined styles) */
+.alert {
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: flex-start; /* Align icon top for multi-line text */
+    gap: 10px;
+    font-weight: 500;
+    border-left-width: 5px;
+    border-left-style: solid;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alert i {
+    font-size: 1.2rem;
+    margin-top: 2px; /* Align icon better */
+    flex-shrink: 0; /* Prevent icon shrinking */
+}
+
+.alert span {
+    flex: 1; /* Allow text to wrap */
+}
+
+.alert-success, .alert.success { /* Support both class naming conventions */
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left-color: var(--success);
+    color: #1c7430;
+}
+
+.alert-danger, .alert.error { /* Support both class naming conventions */
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left-color: var(--danger);
+    color: #a51c2c;
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left-color: var(--warning);
+    color: #b98900;
+}
+
+/* Card Component (Generic wrapper, used in files 2, 3, 4, 6) */
+.card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 20px 25px; /* Consistent padding */
+    margin-bottom: 25px;
+    transition: var(--transition);
+    border: 1px solid var(--light-gray); /* Subtle border */
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
+}
+
+/* --- Form Styles --- */
+
+/* Form Grid (File 1) */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* General Form Group */
+.form-group {
+    margin-bottom: 20px; /* Default spacing */
+}
+.form-grid .form-group {
+    margin-bottom: 0; /* Grid gap handles spacing */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+.form-group label .required {
+    color: var(--danger);
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* Standard Inputs & Selects (File 1 base) */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"], /* Added number */
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--light);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    background-color: white;
+}
+
+/* Input specific styles */
+.form-group input[type="number"] {
+    -moz-appearance: textfield;
+}
+.form-group input[type="number"]::-webkit-outer-spin-button,
+.form-group input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Password Wrapper (File 1) */
+.password-wrapper {
+    position: relative;
+}
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+.password-toggle:hover {
+    color: var(--primary);
+}
+
+/* Conditional Fields (File 1) */
+.conditional-field {
+    background-color: #f0f4ff;
+    padding: 15px;
+    border-radius: var(--radius);
+    border: 1px dashed var(--primary-light);
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    grid-column: span 1;
+    opacity: 1;
+    max-height: 500px; /* Allow reasonable height */
+}
+.conditional-field.hidden {
+     opacity: 0;
+     max-height: 0;
+     padding-top: 0;
+     padding-bottom: 0;
+     margin-top: 0;
+     overflow: hidden;
+     border: none;
+}
+.conditional-field label {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+/* File Input (File 2) */
+.file-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.file-input input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1rem;
+    border: 2px dashed var(--light-gray);
+    border-radius: var(--radius);
+    width: 100%;
+    transition: var(--transition);
+    cursor: pointer; /* Indicate clickable area */
+}
+.file-input-label:hover {
+    border-color: var(--primary-light);
+    background: rgba(67, 97, 238, 0.05);
+}
+.file-input-label i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+.file-name {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--gray);
+    display: none; /* Shown by JS */
+}
+
+/* Form used in File 2 */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+/* Form used for filtering and actions (File 5) */
+.form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+/* Filter form wrapper (File 5) */
+.filter-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--light-gray);
+}
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-grow: 1;
+}
+.filter-group label {
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-weight: 500;
+    white-space: nowrap;
+}
+.filter-group select,
+.filter-group input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    background-color: white;
+    flex-grow: 1;
+    min-width: 150px;
+}
+.filter-group select:focus,
+.filter-group input[type="text"]:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+.filter-group input[type="text"] {
+    min-width: 200px;
+}
+
+/* Suspension Form (File 5) */
+.suspension-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: nowrap;
+    border: 1px solid var(--light-gray);
+    padding: 5px 8px;
+    border-radius: var(--radius);
+    background-color: #f8f9fa;
+}
+.suspension-form label { font-size: 0.8rem; color: var(--gray); margin: 0; white-space: nowrap; }
+.suspension-form input[type="number"] {
+    width: 55px;
+    padding: 4px 6px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+.suspension-form input[type="number"]::-webkit-outer-spin-button,
+.suspension-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.suspension-form .btn-suspend {
+     padding: 4px 8px;
+     font-size: 0.8rem;
+     flex-shrink: 0;
+}
+
+
+/* --- Button Styles --- */
+
+/* General Button (.btn) */
+.btn {
+    display: inline-flex; /* Use inline-flex for alignment */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Gap between icon and text */
+    padding: 10px 20px; /* Default padding */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem; /* Default size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    white-space: nowrap; /* Prevent wrapping */
+}
+.btn:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.btn i {
+    font-size: 1em; /* Icon size relative to button font size */
+    line-height: 1; /* Ensure icon aligns well */
+}
+
+/* Submit Button (File 1) */
+.submit-button-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+}
+.btn-submit { /* Specific style for main form submission */
+     padding: 12px 30px;
+     font-size: 1.1rem;
+}
+
+/* Size Variations */
+.btn-sm {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    gap: 5px;
+}
+.btn-xs { /* Extra small for actions */
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    gap: 5px;
+    border-radius: 8px; /* Smaller radius for smaller buttons */
+}
+
+/* Color Variations */
+.btn-primary { /* Same as default .btn */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger) 0%, #c82333 100%);
+    color: white;
+}
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.2); /* Specific hover shadow */
+}
+
+.btn-success { /* For unblock etc. */
+    background: linear-gradient(135deg, var(--success) 0%, #1e7e34 100%);
+    color: white;
+}
+.btn-success:hover {
+    background: linear-gradient(135deg, #1e7e34 0%, #1c7430 100%);
+}
+
+.btn-warning { /* For block etc. */
+     background: linear-gradient(135deg, var(--warning) 0%, #d39e00 100%);
+     color: var(--dark); /* Dark text on yellow */
+}
+.btn-warning:hover {
+     background: linear-gradient(135deg, #d39e00 0%, #b98900 100%);
+}
+
+.btn-info { /* For suspend etc. */
+     background: linear-gradient(135deg, var(--info) 0%, #117a8b 100%);
+     color: white;
+}
+.btn-info:hover {
+     background: linear-gradient(135deg, #117a8b 0%, #0e6d7b 100%);
+}
+
+.btn-secondary { /* For reset etc. */
+     background: linear-gradient(135deg, var(--gray) 0%, #545b62 100%);
+     color: white;
+}
+.btn-secondary:hover {
+     background: linear-gradient(135deg, #545b62 0%, #4e555b 100%);
+}
+
+/* Aliases for specific actions (File 5) */
+.btn-block { /* Use warning style */
+     background: linear-gradient(135deg, var(--warning) 0%, #d39e00 100%);
+     color: var(--dark);
+}
+.btn-block:hover { background: linear-gradient(135deg, #d39e00 0%, #b98900 100%); }
+.btn-unblock { /* Use success style */
+    background: linear-gradient(135deg, var(--success) 0%, #1e7e34 100%);
+    color: white;
+}
+.btn-unblock:hover { background: linear-gradient(135deg, #1e7e34 0%, #1c7430 100%); }
+.btn-suspend { /* Use info style */
+     background: linear-gradient(135deg, var(--info) 0%, #117a8b 100%);
+     color: white;
+}
+.btn-suspend:hover { background: linear-gradient(135deg, #117a8b 0%, #0e6d7b 100%); }
+
+/* Filter/Reset Buttons (File 5) */
+.btn-filter { /* Use primary style */
+    background-color: var(--primary); /* Simpler background for filter buttons */
+    color: white;
+    flex-shrink: 0;
+}
+.btn-filter:hover { background-color: var(--primary-dark); }
+.btn-reset { /* Use secondary style */
+    background-color: var(--gray);
+    color: white;
+    flex-shrink: 0;
+}
+.btn-reset:hover { background-color: #5a6268; }
+
+
+/* --- Table Styles --- */
+
+/* Table Responsive Wrapper */
+.table-responsive {
+    overflow-x: auto;
+    overflow-y: auto; /* Allow vertical scroll */
+    /* max-height: 500px; /* Example max height */
+    margin-top: 20px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px; /* Default min-width, adjust per table */
+    background-color: white;
+}
+/* Specific min-widths */
+.manage-users-table { min-width: 1100px; }
+.logs-table { min-width: 800px; }
+.abusive-words-table { min-width: 600px; }
+
+
+thead th {
+    background: linear-gradient(135deg, var(--primary-light, #4895ef), var(--primary));
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    white-space: nowrap;
+}
+thead th::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--light-gray);
+    vertical-align: middle;
+    font-size: 0.95rem;
+    white-space: nowrap; /* Default */
+}
+tbody td.wrap-text { /* Class to allow wrapping */
+    white-space: normal;
+    min-width: 200px; /* Example min-width for wrapped cells */
+    word-break: break-word;
+}
+tbody td.details-cell { /* Specific class from logs */
+    white-space: normal;
+    min-width: 250px;
+    word-break: break-word;
+}
+tbody td.action-cell { /* Specific class from abusive words */
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: var(--light);
+}
+tbody tr:hover {
+    background-color: #e2e8f0;
+    transition: background-color 0.2s ease;
+}
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Status Badge (File 5) */
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    line-height: 1.2;
+}
+.status-active { background-color: rgba(40, 167, 69, 0.15); color: var(--success); border-color: rgba(40, 167, 69, 0.3); }
+.status-blocked { background-color: rgba(220, 53, 69, 0.15); color: var(--danger); border-color: rgba(220, 53, 69, 0.3); }
+.status-suspended { background-color: rgba(255, 193, 7, 0.15); color: #b98900; border-color: rgba(255, 193, 7, 0.3); }
+
+/* Action Buttons container within table (File 5) */
+.action-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+/* --- Specific Page Components --- */
+
+/* Backup/Restore Page (File 2) */
+/* Header specific to backup/restore page - if needed */
+/* This might conflict if applied globally. Consider scoping if necessary */
+/* header { ... } */
+/* .header-content { ... } */
+/* header h1 { ... } */
+/* .nav-container { ... } */
+/* Header Nav (File 2) */
+/* nav { ... } */
+/* nav a { ... } */
+/* nav a:hover, nav a.active { ... } */
+/* nav a i { ... } */
+
+/* Main content area specific to backup/restore */
+/* main { ... } */ /* Conflicts with general layout, use specific ID or class if needed */
+
+/* Backup List (File 2) */
+.backup-list {
+    list-style: none;
+    margin-top: 1rem;
+    padding: 0; /* Remove default padding */
+}
+.backup-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light-gray);
+    transition: var(--transition);
+}
+.backup-item:hover { background: rgba(72, 149, 239, 0.05); }
+.backup-item:last-child { border-bottom: none; }
+.backup-info { display: flex; flex-direction: column; gap: 0.25rem; }
+.backup-name { font-weight: 500; color: var(--dark); }
+.backup-date { font-size: 0.8rem; color: var(--gray); }
+.backup-actions { display: flex; gap: 0.5rem; }
+.backup-link { /* Style download link */
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-flex; /* Use inline-flex */
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+}
+.backup-link:hover { background: rgba(67, 97, 238, 0.1); color: var(--primary-dark); }
+.backup-link i { font-size: 0.9rem; }
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray);
+    background-color: var(--light); /* Add background */
+    border-radius: var(--radius);
+    border: 1px dashed var(--light-gray);
+}
+.empty-state i { font-size: 2rem; margin-bottom: 1rem; color: var(--light-gray); }
+
+
+/* Dashboard Page (File 3) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.stat-card {
+    background: var(--light);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--light-gray);
+}
+.stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.stat-card i { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+.stat-card h4 { font-size: 1.1rem; margin-bottom: 10px; color: var(--dark); }
+.stat-card p { font-size: 1.5rem; font-weight: 600; color: var(--primary-dark); margin: 0; }
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.action-card {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-radius: var(--radius);
+    padding: 25px 20px; /* Increased padding */
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+}
+.action-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.action-card i { font-size: 2.2rem; margin-bottom: 15px; }
+.action-card span { font-size: 1rem; font-weight: 500; }
+
+
+/* Floating Action Button (FAB - File 5) */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: var(--transition);
+    z-index: 1000;
+}
+.fab:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%);
+    color: white;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-top: auto; /* Push to bottom */
+    flex-shrink: 0;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.group-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+.social-links a:hover {
+    transform: translateY(-3px);
+    color: var(--accent);
+}
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
+/* --- Responsive Design --- */
+
+@media (max-width: 1200px) {
+     .container { padding: 25px 30px; }
+     table { min-width: 950px; } /* Adjust default min-width */
+     .manage-users-table { min-width: 1000px; }
+}
+
+@media (max-width: 992px) {
+    /* Switch main layout to vertical */
+    body { flex-direction: column; }
+    .vertical-nav {
+        width: 100%;
+        height: auto;
+        position: relative; /* No longer sticky */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow-y: visible;
+        z-index: auto; /* Reset z-index */
+    }
+    .main-content {
+        padding: 15px;
+        max-height: none; /* Remove height constraints */
+        overflow-y: visible; /* Remove scroll */
+    }
+    .container { padding: 20px; }
+    thead th { position: static; } /* Remove sticky header */
+    thead th::after { display: none; }
+    table { min-width: 800px; }
+    .manage-users-table { min-width: 900px; }
+    .filter-group { flex-basis: 48%; flex-grow: 0; }
+    .user-info h4 { max-width: 100%; } /* Allow user info to expand */
+}
+
+@media (max-width: 768px) {
+    /* Stack horizontal nav, adjust table display */
+    .horizontal-nav { flex-direction: column; gap: 10px; }
+    .horizontal-menu { justify-content: center; }
+    .container { padding: 15px; }
+    .card { padding: 15px; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    /* Responsive Table: Stack columns */
+    .table-responsive { overflow: visible; border: none; box-shadow: none; margin-top: 0; }
+    table, thead, tbody, th, td, tr { display: block; width: 100%; }
+    thead { display: none; }
+    tr { border: 1px solid var(--light-gray); margin-bottom: 15px; border-radius: var(--radius); box-shadow: var(--shadow-soft); padding: 10px; background-color: white !important; /* Override nth-child */}
+    tbody tr:hover { background-color: white !important; } /* Disable row hover */
+    td { border: none; border-bottom: 1px dashed var(--light-gray); padding: 10px 0; display: flex; justify-content: space-between; align-items: center; text-align: right; white-space: normal; }
+    td:last-child { border-bottom: none; }
+    td::before { content: attr(data-label); font-weight: bold; margin-right: 10px; color: var(--primary); text-align: left; white-space: nowrap; }
+    /* Adjust specific tables */
+    .manage-users-table td, .logs-table td { min-width: 0; } /* Reset min-width for block layout */
+    .action-btns { flex-direction: column; align-items: stretch; width: 100%; gap: 10px; margin-top: 10px; }
+    .action-btns form, .action-btns .btn { width: 100%; margin-bottom: 0; }
+    .suspension-form { flex-wrap: wrap; justify-content: space-between; padding: 10px; }
+    .suspension-form label { width: auto; margin-bottom: 5px; }
+    .suspension-form input[type="number"] { width: calc(50% - 10px); margin-bottom: 10px;}
+    .suspension-form button { width: 100%; }
+    /* Stack filter form */
+    .filter-form { padding: 15px; }
+    .form-inline.filter-form-inner { flex-direction: column; align-items: stretch; gap: 10px; } /* Target only filter form's inline */
+    .filter-group { flex-direction: column; align-items: stretch; flex-basis: auto; }
+    .filter-group label { margin-bottom: 5px; text-align: left; }
+    .filter-group input[type="text"], .filter-group select { width: 100%; min-width: 0; }
+    .filter-group button, .filter-group a.btn { width: 100%; }
+    .fab { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.3rem; }
+    /* Stack form grid */
+     .form-grid { grid-template-columns: 1fr; }
+     .conditional-field { grid-column: span 1; }
+     /* Backup page adjustments */
+    .backup-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .backup-actions { width: 100%; justify-content: flex-end; }
+    /* Header Nav (File 2) */
+    /* nav { gap: 0.75rem; } */
+    /* nav a { padding: 0.4rem 0.8rem; font-size: 0.9rem; } */
+}
+
+@media (max-width: 576px) {
+    /* Further adjustments for very small screens */
+    .main-content { padding: 10px; }
+    .horizontal-nav .logo { display: none; }
+    .horizontal-menu a { padding: 6px 10px; font-size: 0.9rem; }
+    .container { padding: 10px; }
+    .card { padding: 10px; }
+    h2 { font-size: 1.4rem; margin-bottom: 20px; }
+    h3 { font-size: 1.2rem; }
+    td { padding: 8px 0; }
+    td::before { font-size: 0.85em; }
+    .status { padding: 4px 8px; font-size: 0.75rem; }
+    .btn, .btn-sm, .btn-xs { padding: 8px 10px; font-size: 0.8rem; } /* Consolidate small button padding */
+    .suspension-form input[type="number"] { width: 100%; }
+    .nav-header .logo-text { font-size: 1.1rem; }
+    .user-info h4 { font-size: 0.85rem; max-width: 120px; }
+    .nav-link { padding: 10px 12px; }
+    .fab { width: 45px; height: 45px; font-size: 1.2rem; bottom: 15px; right: 15px;}
+     /* Form grid inputs */
+    .form-group input, .form-group select { padding: 10px 12px; font-size: 0.95rem; }
+    .btn-submit { padding: 10px 25px; font-size: 1rem; }
+}

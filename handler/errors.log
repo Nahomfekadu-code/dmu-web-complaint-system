@@ -1,0 +1,15 @@
+[01-May-2025 19:18:59 Europe/Berlin] Found president_id: 10
+[01-May-2025 19:18:59 Europe/Berlin] Response submitted successfully for decision_id: 12, complaint_id: 17
+[01-May-2025 19:18:59 Europe/Berlin] Debug log: Fetched handler details for ID: 3; Fetched decision details for decision_id: 12; Starting transaction for complaint_id: 17; Inserted decision for complaint_id: 17; Updated complaint status to in_progress for complaint_id: 17; Notified sender_id: 13; Notified complainant_id: 23; Inserted report for president_id: 10; Notified president_id: 10; Transaction committed
+[01-May-2025 19:19:19 Europe/Berlin] Found president_id: 10
+[01-May-2025 19:19:19 Europe/Berlin] Response submitted successfully for decision_id: 12, complaint_id: 17
+[01-May-2025 19:19:19 Europe/Berlin] Debug log: Fetched handler details for ID: 3; Fetched decision details for decision_id: 12; Starting transaction for complaint_id: 17; Inserted decision for complaint_id: 17; Updated complaint status to in_progress for complaint_id: 17; Notified sender_id: 13; Notified complainant_id: 23; Inserted report for president_id: 10; Notified president_id: 10; Transaction committed
+[01-May-2025 19:31:58 Europe/Berlin] Found president_id: 10
+[01-May-2025 19:31:58 Europe/Berlin] Response submitted successfully for decision_id: 11, complaint_id: 16
+[01-May-2025 19:31:58 Europe/Berlin] Debug log: Fetched handler details for ID: 3; Fetched decision details for decision_id: 11; Starting transaction for complaint_id: 16; Inserted decision for complaint_id: 16; Updated complaint status to in_progress for complaint_id: 16; Notified sender_id: 13; Notified complainant_id: 23; Inserted report for president_id: 10; Notified president_id: 10; Transaction committed
+[01-May-2025 20:23:43 Europe/Berlin] Found president_id: 10
+[01-May-2025 20:23:43 Europe/Berlin] Response submitted successfully for decision_id: 25, complaint_id: 19
+[01-May-2025 20:23:43 Europe/Berlin] Debug log: Fetched handler details for ID: 3; Fetched decision details for decision_id: 25; Starting transaction for complaint_id: 19; Inserted decision for complaint_id: 19; Updated complaint status to in_progress for complaint_id: 19; Notified sender_id: 13; Notified complainant_id: 23; Inserted report for president_id: 10; Notified president_id: 10; Transaction committed
+[01-May-2025 20:31:37 Europe/Berlin] Found president_id: 10
+[01-May-2025 20:31:37 Europe/Berlin] Response submitted successfully for decision_id: 27, complaint_id: 20
+[01-May-2025 20:31:37 Europe/Berlin] Debug log: Fetched handler details for ID: 3; Fetched decision details for decision_id: 27; Starting transaction for complaint_id: 20; Inserted decision for complaint_id: 20; Updated complaint status to in_progress for complaint_id: 20; Notified sender_id: 13; Notified complainant_id: 23; Inserted report for president_id: 10; Notified president_id: 10; Transaction committed
